@@ -2,6 +2,7 @@ package hello.itemservice.domain.item;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.Range;
+import org.hibernate.validator.constraints.ScriptAssert;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
@@ -10,6 +11,7 @@ import javax.validation.constraints.NotNull;
 @Data
 public class Item {
 
+//    @NotNull //수정 요구사항 추가
     private Long id;
 
     @NotBlank
@@ -20,7 +22,7 @@ public class Item {
     private Integer price;
 
     @NotNull
-    @Max(9999)
+//    @Max(9999) //수정 요구사항 추가
     private Integer quantity;
 
     public Item() {
